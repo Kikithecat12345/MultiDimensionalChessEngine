@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multidimensional Fairy Chess Engine</title>
+        <style>
+            /*
+            body {
+                background-image: url("cover.jpg");
+                background-size: 10em;
+                color:white;
+            } */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            label,
+            button,
+            input {
+                font-family: "Fira Code", monospace;
+            }
+            #title {
+                font-size: 25px;
+                margin-bottom: 8px;
+            }
+            #headerText {
+                font-size: 17px;
+                margin: 2px;
+            }
+            .border {
+                border-style: solid;
+                padding: 5px;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+            .mainMenu.border {
+                padding-top: 2px;
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <h1 id="title">Multidimensional Fairy Chess Engine</h1>
+        <div class="mainMenu border" style="display: inline-block;">
+            <h2 id="headerText">Main Menu</h2>
+            <buttons>
+                <button class="play menu">Play existing variant</button>
+                <button class="create">Create new variant</button>
+                <button class="options">Options</button>
+            </buttons>
+        </div>
+        <div class="createScreen border">
+            <div class="menu">
+                <textBoxes>
+                    <label>Variant name: <input tag="name" /></label>
+                    <br />
+                    <label>
+                        Description: <br />
+                        <textarea rows="4" cols="50">Enter Description Here</textarea>
+                    </label>
+                </textBoxes>
+                <br />
+                <buttons>
+                    <button class="pieceEditor">Piece editor</button>
+                    <button class="boardEditor">Board editor</button>
+                    <button class="rulesEditor">Rules editor</button> 
+                    <br />
+                    <br />
+                    <button class="output">Get Copyable Code</button>
+                    <button class="play create">Play this variant</button>  
+                </buttons>
+            </div>
+        </div>
+        <playScreen></playScreen>
+    </body>
+</html>
