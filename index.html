@@ -25,8 +25,9 @@
                 margin-bottom: 8px;
             }
             #headerText {
-                font-size: 17px;
+                font-size: 19px;
                 margin: 2px;
+                margin-left: 0px;
             }
             .border {
                 border-style: solid;
@@ -38,12 +39,11 @@
                 padding-top: 2px;
             }
         </style>
-        <script>
-        </script>
+        <script></script>
     </head>
     <body>
         <h1 id="title">Multidimensional Fairy Chess Engine</h1>
-        <div class="mainMenu border" style="display: inline-block;">
+        <div class="mainMenu border" style="display: none;">
             <h2 id="headerText">Main Menu</h2>
             <buttons>
                 <button class="play menu">Play existing variant</button>
@@ -52,27 +52,21 @@
             </buttons>
         </div>
         <div class="createScreen border">
-            <div class="menu">
-                <textBoxes>
-                    <label>Variant name: <input tag="name" /></label>
-                    <br />
-                    <label>
-                        Description: <br />
-                        <textarea rows="4" cols="50">Enter Description Here</textarea>
-                    </label>
-                </textBoxes>
+            <div class="step1" style="display: none;">
+                <h2 id="headerText">Step 1: Naming</h3>
+                <label>Variant name: <input tag="name" /></label>
                 <br />
-                <buttons>
-                    <button class="pieceEditor">Piece editor</button>
-                    <button class="boardEditor">Board editor</button>
-                    <button class="rulesEditor">Rules editor</button> 
-                    <br />
-                    <br />
-                    <button class="output">Get Copyable Code</button>
-                    <button class="play create">Play this variant</button>  
-                </buttons>
+                <label>
+                    Description: <br />
+                    <textarea rows="4" cols="50"></textarea>
+                </label>
+                <br />
+                <button class="nextStep">Next step</button>
+                <button class="resetStep">Reset Step</button>
+            </div>
+            <div class="step2">
+                <h2 id="headerText">Step 2: The Board: Tile Shape</h2>
             </div>
         </div>
-        <playScreen></playScreen>
     </body>
 </html>
