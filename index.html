@@ -2,71 +2,92 @@
 <html>
     <head>
         <title>Multidimensional Fairy Chess Engine</title>
-        <style>
-            /*
-            body {
-                background-image: url("cover.jpg");
-                background-size: 10em;
-                color:white;
-            } */
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            label,
-            button,
-            input {
-                font-family: "Fira Code", monospace;
-            }
-            #title {
-                font-size: 25px;
-                margin-bottom: 8px;
-            }
-            #headerText {
-                font-size: 19px;
-                margin: 2px;
-                margin-left: 0px;
-            }
-            .border {
-                border-style: solid;
-                padding: 5px;
-                display: inline-block;
-                margin-bottom: 5px;
-            }
-            .mainMenu.border {
-                padding-top: 2px;
-            }
-        </style>
-        <script></script>
+        <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://static.onpointcoding.net/jquery/jquery.js"></script>
+        <script src="jsFiles/options.js"></script>
+        <script src="jsFiles/createScreen.js"></script>
+        <script src="jsFiles/chessEngine.js"></script>
+        <script src="index.js"></script>
     </head>
     <body>
         <h1 id="title">Multidimensional Fairy Chess Engine</h1>
-        <div class="mainMenu border" style="display: none;">
+        <!--<i class="fa fa-home"></i>-->
+        <div class="mainMenu border">
             <h2 id="headerText">Main Menu</h2>
             <buttons>
-                <button class="play menu">Play existing variant</button>
-                <button class="create">Create new variant</button>
-                <button class="options">Options</button>
+                <button id="play">Play existing variant</button>
+                <button id="create">Create new variant</button>
+                <button id="options" onclick="chessEngine.options();">Options</button>
             </buttons>
         </div>
+        <div class="optionsMenu border">
+            <h2 id="headerText">Options</h2>
+            <p id="text">Nothing here yet...</p>
+            <button id="home" onclick="chessEngine.home();"><i class="fa fa-home"></i> Main Menu</button>
+        </div>
         <div class="createScreen border">
-            <div class="step1" style="display: none;">
-                <h2 id="headerText">Step 1: Naming</h3>
-                <label>Variant name: <input tag="name" /></label>
-                <br />
-                <label>
-                    Description: <br />
-                    <textarea rows="4" cols="50"></textarea>
-                </label>
-                <br />
-                <button class="nextStep">Next step</button>
-                <button class="resetStep">Reset Step</button>
-            </div>
-            <div class="step2">
-                <h2 id="headerText">Step 2: The Board: Tile Shape</h2>
-            </div>
+            <div id="steps">
+                <div class="step1">
+                    <h2 id="headerText">Preparation: Naming</h2>
+                    <label>Variant name: <input tag="name" /></label>
+                    <br />
+                    <label>
+                        Description: <br />
+                        <textarea rows="4" cols="50"></textarea>
+                    </label>
+                    <br />
+                    <button class="nextStep">Next step</button>
+                    <button class="resetStep">Reset step</button>
+                </div>
+                <div class="step2">
+                    <h2 id="headerText">Preparation: The Basics</h2>
+                    <p id="text">Select grid type:</p>
+                    <form>
+                        <input type="radio" id="square" name="gridType" value="square" checked=true>
+                        <label for="square">Square Grid</label>
+                        <input type="radio" id="triangle" name="gridType" value="triangle">
+                        <label for="square">Triangular Grid</label>
+                        <input type="radio" id="hexagon" name="gridType" value="hexagon">
+                        <label for="square">Hexagonal Grid</label>
+                        <input type="radio" id="rhombus" name="gridType" value="rhombus">
+                        <label for="square">Rhombus Grid</label>
+                    </form>
+                    <p id="note"><b>NOTE:</b> Square grid is the only option for boards other than 2 dimensions.</p>
+                    <br />
+                    <p id="text">Select all that apply:</p>
+                    <form>
+                        <input type="checkbox" id="shogilike" name="shogilike" value="shogilike">
+                        <label for="shogilike">Contains Shogi-like Mechanics (i.e. drops)</label>
+                        <br />
+                        <input type="checkbox" id="multimove" name="multimove" value="multimove">
+                        <label for="multimove">Contains Multimove or non-regular turn order</label>
+                        <br />
+                        <input type="checkbox" id="multiplayer" name="multiplayer" value="multiplayer">
+                        <label for="multiplayer">Has more than 2 players or only 1 player</label>
+                        <br />
+                        <input type="checkbox" id="customboard" name="customboard" value="customboard">
+                        <label for="customboard">Has a custom board shape (including multi-dimensional boards)</label>
+                        <br />
+                        <input type="checkbox" id="custompieces" name="custompieces" value="custompieces">
+                        <label for="custompieces">Has fairy pieces (or changes to existing pieces)</label>
+                        <br />
+                        <input class="secondaryOption" type="checkbox" id="towerpieces" name="towerpieces" value="towerpieces" disabled=true>
+                        <label for="towerpieces">Has towers (pieces that are inanimate or have to be moved by another piece)</label>
+                        <br />
+                        <input type="checkbox" id="weirdrules" name="weirdrules" value="weirdrules">
+                        <label for="weirdrules">Has special custom rules (i.e. en passant or castling)</label>
+                        <br />
+                        <input class="secondaryOption" type="checkbox" id="spectatorrules" name="spectatorrules" value="spectatorrules" disabled=true>
+                        <label for="spectatorrules">Has rules that allow spectator interaction</label> 
+                    </form>
+                    <buttons>
+                        <button class="nextStep">Next step</button>
+                        <button class="resetStep">Reset step</button>
+                        <button class="previousStep">Previous step</button>
+                    </buttons>
+                </div>
+            </div id="steps">
         </div>
     </body>
 </html>

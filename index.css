@@ -1,0 +1,60 @@
+/*
+body {
+    background-image: url("cover.jpg");
+    background-size: 10em;
+    color:white;
+} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+button,
+form,
+p,
+input {
+    font-family: "Fira Code", monospace;
+}
+#title {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+#headerText {
+    font-size: 19px;
+    margin: 2px;
+    margin-left: 0px;
+    margin-bottom: 9px;
+}
+#text {
+    margin: 2px;
+    margin-left: 0px;
+}
+#note {
+    margin: 2px;
+    margin-left: 0px;
+    text-decoration: underline;
+}
+.border {
+    border-style: solid;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.mainMenu.border {
+    padding-top: 2px;
+}
+input[disabled=true] + label {
+    color:gray;
+    text-decoration: line-through;
+}
+.secondaryOption {
+    margin-left: 2em;
+}
+#steps {
+    display: none;
+}
+#home {
+    padding: 2px;
+}
