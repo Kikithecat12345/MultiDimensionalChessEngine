@@ -14,8 +14,14 @@ label,
 button,
 form,
 p,
-input {
+input,
+#errorText {
     font-family: "Fira Code", monospace;
+}
+#errorText {
+    color: red;
+    margin: 2px;
+    margin-bottom: 4px; 
 }
 #title {
     font-size: 25px;
@@ -45,16 +51,17 @@ input {
 .mainMenu.border {
     padding-top: 2px;
 }
-input[disabled=true] + label {
+input:disabled + label {
     color:gray;
     text-decoration: line-through;
 }
 .secondaryOption {
     margin-left: 2em;
 }
-#steps {
+div[step] {
     display: none;
 }
 #home {
     padding: 2px;
+    font-size: 20px;
 }
