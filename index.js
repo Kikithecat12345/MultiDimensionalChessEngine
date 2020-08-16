@@ -4,6 +4,12 @@
  * Thanks to MrMelon for answering all my questions and stuff
  */
 var step2checks = [false, false];
+
+function renderStartupMessage(option) {
+  if (option instanceof Array) return option.map(line => '[--> ' + line + ' <--]').join('\n')
+  else return '[--> ' + option + ' <--]'
+}
+
 $(document).ready(function() {
     const mainMenu = $(".mainMenu");
     const createScreen = $(".createScreen");
@@ -19,18 +25,18 @@ $(document).ready(function() {
         "Peekaboo!",
         "Oh hi. Didn't see you there.",
         "$(\"chess\").makeBestMove();",
-        "\\^chess$\\gi",
+        "/^chess$/gi",
         "QGa32xGa39+",
         "*insert funny chess joke here*",
         "As seen on TV!",
-        "Don't run $(\"html\").delete() <--]\n[--> Well, I guess you could?",
+        ["Don't run $(\"html\").delete()","Well, I guess you could?"],
         "Cheated cookies taste awful. Wait, wrong game...",
         "That's NumberWang!",
-        "/give @p diamond_block 64 <--]\n[-->   Wait, wrong game...",
+        ["/give @p diamond_block 64","   Wait, wrong game..."],
         "*funny easter egg*",
         "https://www.onpointcoding.net/"
     ]
-    console.log('[--> ' + startupMessages[Math.floor(Math.random()*startupMessages.length)] + ' <--]');
+    console.log(renderStartupMessage(startupMessages[Math.floor(Math.random()*startupMessages.length)]));
 });
 
 
