@@ -21,9 +21,7 @@
             <buttons>
                 <button id="play">Play existing variant</button>
                 <button id="create" onclick="chessEngine.create();">Create new variant</button>
-                <button id="options" onclick="chessEngine.options();">
-                    Options
-                </button>
+                <button id="options" onclick="chessEngine.options();">Options</button>
             </buttons>
         </div>
         <div class="optionsMenu border">
@@ -178,9 +176,9 @@
                     >
                 </form>
                 <buttons>
-                    <button class="nextStep">Next step</button>
-                    <button class="resetStep" onclick="chessEngine._create.step2reset();">Reset step</button>
                     <button class="previousStep" onclick="chessEngine._create.step2back();">Previous step</button>
+                    <button class="resetStep" onclick="chessEngine._create.step2reset();">Reset step</button>
+                    <button class="nextStep">Next step</button>
                 </buttons>
             </div>
             <div class="playerStep"> <!--step=true-->
